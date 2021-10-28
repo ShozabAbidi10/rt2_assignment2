@@ -69,4 +69,4 @@ After doing this you will see two terminal windows start appearing on the screen
  
  ** Sphinx :** 
  
- * The documentation for Sphinx can be access from this directory '{ros_ws}/src/rt2_assignment2/-build/..'
+ * The documentation for Sphinx can be access from this directory '{ros_ws}/src/rt2_assignment2/_build/html/index.html'
