@@ -1,0 +1,193 @@
+\hypertarget{namespacego__to__point__action}{}\doxysection{go\+\_\+to\+\_\+point\+\_\+action Namespace Reference}
+\label{namespacego__to__point__action}\index{go\_to\_point\_action@{go\_to\_point\_action}}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classgo__to__point__action_1_1_position_action}{Position\+Action}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{namespacego__to__point__action_affe1389e38557b69ee71adea85b846b2}{clbk\+\_\+odom}} (msg)
+\item 
+def \mbox{\hyperlink{namespacego__to__point__action_afbecf7f8f9969539cfb70d9430a41fd2}{clbk\+\_\+ctrl\+\_\+speed}} (msg)
+\item 
+def \mbox{\hyperlink{namespacego__to__point__action_ab7ad2629ed9ffbd5d9b7ca9c540d932a}{change\+\_\+state}} (state)
+\item 
+def \mbox{\hyperlink{namespacego__to__point__action_a0bca87c6d45ca63d3152a4e8def72e2a}{normalize\+\_\+angle}} (angle)
+\item 
+def \mbox{\hyperlink{namespacego__to__point__action_a18e7fef09d30f59bb91061f4b91f87e6}{fix\+\_\+yaw}} (des\+\_\+pos)
+\item 
+def \mbox{\hyperlink{namespacego__to__point__action_a7c35034eab524fbff7d05d80fd65ede4}{go\+\_\+straight\+\_\+ahead}} (des\+\_\+pos)
+\item 
+def \mbox{\hyperlink{namespacego__to__point__action_a068188471dd5fc0ed3ea371e3a32338a}{fix\+\_\+final\+\_\+yaw}} (des\+\_\+yaw)
+\item 
+def \mbox{\hyperlink{namespacego__to__point__action_a9fec1cd57aebd720828b5bab962048db}{done}} ()
+\item 
+def \mbox{\hyperlink{namespacego__to__point__action_a33cfc08b34e07f53ddda67d2ab551ba1}{main}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{namespacego__to__point__action_afd83e8a50982500cb1aea028fa6bd8fb}\label{namespacego__to__point__action_afd83e8a50982500cb1aea028fa6bd8fb}} 
+{\bfseries position\+\_\+} = Point()
+\item 
+\mbox{\Hypertarget{namespacego__to__point__action_a7e81c61a8a01745a08f175577455bcb4}\label{namespacego__to__point__action_a7e81c61a8a01745a08f175577455bcb4}} 
+int {\bfseries yaw\+\_\+} = 0
+\item 
+\mbox{\Hypertarget{namespacego__to__point__action_ac62dc273bd86649b350cb6c1aff4814e}\label{namespacego__to__point__action_ac62dc273bd86649b350cb6c1aff4814e}} 
+int {\bfseries speed\+\_\+factor\+\_\+linear\+\_\+} = 0
+\item 
+\mbox{\Hypertarget{namespacego__to__point__action_ab7c711a73524379c2c7051e661b90e25}\label{namespacego__to__point__action_ab7c711a73524379c2c7051e661b90e25}} 
+int {\bfseries speed\+\_\+factor\+\_\+angular\+\_\+} = 0
+\item 
+\mbox{\Hypertarget{namespacego__to__point__action_a6d09e37099932459bc3e4146007cce86}\label{namespacego__to__point__action_a6d09e37099932459bc3e4146007cce86}} 
+{\bfseries pub\+\_\+} = None
+\item 
+\mbox{\Hypertarget{namespacego__to__point__action_aefe65db40d1e74e9aed11a5fffc85d0c}\label{namespacego__to__point__action_aefe65db40d1e74e9aed11a5fffc85d0c}} 
+{\bfseries pub\+\_\+succ\+\_\+status\+\_\+} = None
+\item 
+\mbox{\Hypertarget{namespacego__to__point__action_a8817638994ed9d1197c3434128444e04}\label{namespacego__to__point__action_a8817638994ed9d1197c3434128444e04}} 
+{\bfseries pub\+\_\+cancel\+\_\+status\+\_\+} = None
+\item 
+\mbox{\Hypertarget{namespacego__to__point__action_a1c1588aac776a5c1be12d47e52101192}\label{namespacego__to__point__action_a1c1588aac776a5c1be12d47e52101192}} 
+{\bfseries pub\+\_\+task\+\_\+time\+\_\+} = None
+\item 
+\mbox{\Hypertarget{namespacego__to__point__action_a71b3bfd8603c6a03f3a5bad51cd309e7}\label{namespacego__to__point__action_a71b3bfd8603c6a03f3a5bad51cd309e7}} 
+int {\bfseries no\+\_\+successful\+\_\+target\+\_\+} = 0
+\item 
+\mbox{\Hypertarget{namespacego__to__point__action_a1c927ae3b74fd2970655cde771020a00}\label{namespacego__to__point__action_a1c927ae3b74fd2970655cde771020a00}} 
+int {\bfseries no\+\_\+cancelled\+\_\+target\+\_\+} = 0
+\item 
+\mbox{\Hypertarget{namespacego__to__point__action_a68b21cc9247a4baf4aff2ca16c237f53}\label{namespacego__to__point__action_a68b21cc9247a4baf4aff2ca16c237f53}} 
+{\bfseries t\+\_\+array} = Int32\+Multi\+Array()
+\item 
+\mbox{\Hypertarget{namespacego__to__point__action_a99d0c1c8c5e359fcd5f1901e25a86a2d}\label{namespacego__to__point__action_a99d0c1c8c5e359fcd5f1901e25a86a2d}} 
+int {\bfseries yaw\+\_\+precision\+\_\+} = math.\+pi / 9
+\item 
+\mbox{\Hypertarget{namespacego__to__point__action_aeaede468f4753c2c476474b35b81754c}\label{namespacego__to__point__action_aeaede468f4753c2c476474b35b81754c}} 
+int {\bfseries yaw\+\_\+precision\+\_\+2\+\_\+} = math.\+pi / 90
+\item 
+\mbox{\Hypertarget{namespacego__to__point__action_a01a3cd0c013f3c1712758e04b4bc91f4}\label{namespacego__to__point__action_a01a3cd0c013f3c1712758e04b4bc91f4}} 
+float {\bfseries dist\+\_\+precision\+\_\+} = 0.\+1
+\item 
+\mbox{\Hypertarget{namespacego__to__point__action_a67a9de26fa4f88312f9cc4a8ecedb369}\label{namespacego__to__point__action_a67a9de26fa4f88312f9cc4a8ecedb369}} 
+float {\bfseries kp\+\_\+a} = -\/3.\+0
+\item 
+\mbox{\Hypertarget{namespacego__to__point__action_acd565e807f177f678d6a12d504d01e60}\label{namespacego__to__point__action_acd565e807f177f678d6a12d504d01e60}} 
+float {\bfseries kp\+\_\+d} = 0.\+2
+\item 
+\mbox{\Hypertarget{namespacego__to__point__action_a9cb07d74a9d8087eb04da488c77c118c}\label{namespacego__to__point__action_a9cb07d74a9d8087eb04da488c77c118c}} 
+float {\bfseries ub\+\_\+a} = 0.\+6
+\item 
+\mbox{\Hypertarget{namespacego__to__point__action_a156fcdad5d5c28042b46d45d323a9fac}\label{namespacego__to__point__action_a156fcdad5d5c28042b46d45d323a9fac}} 
+float {\bfseries lb\+\_\+a} = -\/0.\+5
+\item 
+\mbox{\Hypertarget{namespacego__to__point__action_a05a9d1a5cc9bd5e985d6ad5247ac985d}\label{namespacego__to__point__action_a05a9d1a5cc9bd5e985d6ad5247ac985d}} 
+float {\bfseries ub\+\_\+d} = 0.\+6
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}.. module:: go_to_point_action
+:platform: Unix
+:synopsis: Python module for piloting the robot to the target
+
+.. moduleauthor:: Shozab Abidi <4929631@studenti.unige.it>
+
+ROS node for driving a robot to a specific point
+
+Subscribers:
+/odom
+/control_speed
+
+ Publishers : <BR>
+/odom
+/control_speed
+/cancel_goals
+/success_goals
+
+Service:
+/go_to_point\end{DoxyVerb}
+ 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{namespacego__to__point__action_ab7ad2629ed9ffbd5d9b7ca9c540d932a}\label{namespacego__to__point__action_ab7ad2629ed9ffbd5d9b7ca9c540d932a}} 
+\index{go\_to\_point\_action@{go\_to\_point\_action}!change\_state@{change\_state}}
+\index{change\_state@{change\_state}!go\_to\_point\_action@{go\_to\_point\_action}}
+\doxysubsubsection{\texorpdfstring{change\_state()}{change\_state()}}
+{\footnotesize\ttfamily def go\+\_\+to\+\_\+point\+\_\+action.\+change\+\_\+state (\begin{DoxyParamCaption}\item[{}]{state }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}This is a function used for changing the value of global variable 'state_' 
+It takes an arguement with data type 'int ' and assigned it to the global
+variable 'state_'. \end{DoxyVerb}
+ \mbox{\Hypertarget{namespacego__to__point__action_afbecf7f8f9969539cfb70d9430a41fd2}\label{namespacego__to__point__action_afbecf7f8f9969539cfb70d9430a41fd2}} 
+\index{go\_to\_point\_action@{go\_to\_point\_action}!clbk\_ctrl\_speed@{clbk\_ctrl\_speed}}
+\index{clbk\_ctrl\_speed@{clbk\_ctrl\_speed}!go\_to\_point\_action@{go\_to\_point\_action}}
+\doxysubsubsection{\texorpdfstring{clbk\_ctrl\_speed()}{clbk\_ctrl\_speed()}}
+{\footnotesize\ttfamily def go\+\_\+to\+\_\+point\+\_\+action.\+clbk\+\_\+ctrl\+\_\+speed (\begin{DoxyParamCaption}\item[{}]{msg }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}This is a callback function of the subscriber 'ctrl_speed' for the ROS '/control_speed 'topic'. 
+It takes the arguement of data structure type 'Twist', which contains speed factors value  
+and then store them in the global variables 'speed_factor_linear_' and 'speed_factor_angular_'.  \end{DoxyVerb}
+ \mbox{\Hypertarget{namespacego__to__point__action_affe1389e38557b69ee71adea85b846b2}\label{namespacego__to__point__action_affe1389e38557b69ee71adea85b846b2}} 
+\index{go\_to\_point\_action@{go\_to\_point\_action}!clbk\_odom@{clbk\_odom}}
+\index{clbk\_odom@{clbk\_odom}!go\_to\_point\_action@{go\_to\_point\_action}}
+\doxysubsubsection{\texorpdfstring{clbk\_odom()}{clbk\_odom()}}
+{\footnotesize\ttfamily def go\+\_\+to\+\_\+point\+\_\+action.\+clbk\+\_\+odom (\begin{DoxyParamCaption}\item[{}]{msg }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}This is a callback function of the subscriber 'sub_odom' for the ROS topic '/odom'
+It takes the robot's odometry data as arguement, extract the position and yaw and
+then store it in the global variables 'position_' and 'yaw_'.\end{DoxyVerb}
+ \mbox{\Hypertarget{namespacego__to__point__action_a9fec1cd57aebd720828b5bab962048db}\label{namespacego__to__point__action_a9fec1cd57aebd720828b5bab962048db}} 
+\index{go\_to\_point\_action@{go\_to\_point\_action}!done@{done}}
+\index{done@{done}!go\_to\_point\_action@{go\_to\_point\_action}}
+\doxysubsubsection{\texorpdfstring{done()}{done()}}
+{\footnotesize\ttfamily def go\+\_\+to\+\_\+point\+\_\+action.\+done (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}This function makes the linear and angular velocities to zero. Generally it 
+use when robot has successfully reach the target or when user have requested
+the node to stop the robot.  \end{DoxyVerb}
+ \mbox{\Hypertarget{namespacego__to__point__action_a068188471dd5fc0ed3ea371e3a32338a}\label{namespacego__to__point__action_a068188471dd5fc0ed3ea371e3a32338a}} 
+\index{go\_to\_point\_action@{go\_to\_point\_action}!fix\_final\_yaw@{fix\_final\_yaw}}
+\index{fix\_final\_yaw@{fix\_final\_yaw}!go\_to\_point\_action@{go\_to\_point\_action}}
+\doxysubsubsection{\texorpdfstring{fix\_final\_yaw()}{fix\_final\_yaw()}}
+{\footnotesize\ttfamily def go\+\_\+to\+\_\+point\+\_\+action.\+fix\+\_\+final\+\_\+yaw (\begin{DoxyParamCaption}\item[{}]{des\+\_\+yaw }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}This function takes the desired yaw data as argument. Based on the 'yaw error' calculates the
+final angular velocity require to match goal orientation and then publishes it in the topic 'cmd_vel'. \end{DoxyVerb}
+ \mbox{\Hypertarget{namespacego__to__point__action_a18e7fef09d30f59bb91061f4b91f87e6}\label{namespacego__to__point__action_a18e7fef09d30f59bb91061f4b91f87e6}} 
+\index{go\_to\_point\_action@{go\_to\_point\_action}!fix\_yaw@{fix\_yaw}}
+\index{fix\_yaw@{fix\_yaw}!go\_to\_point\_action@{go\_to\_point\_action}}
+\doxysubsubsection{\texorpdfstring{fix\_yaw()}{fix\_yaw()}}
+{\footnotesize\ttfamily def go\+\_\+to\+\_\+point\+\_\+action.\+fix\+\_\+yaw (\begin{DoxyParamCaption}\item[{}]{des\+\_\+pos }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}This function takes the desired position data as an argument. Calculates the
+'yaw error' and based on that calculates the    required angular velocity and then 
+publishes it in the topic 'cmd_vel'. \end{DoxyVerb}
+ \mbox{\Hypertarget{namespacego__to__point__action_a7c35034eab524fbff7d05d80fd65ede4}\label{namespacego__to__point__action_a7c35034eab524fbff7d05d80fd65ede4}} 
+\index{go\_to\_point\_action@{go\_to\_point\_action}!go\_straight\_ahead@{go\_straight\_ahead}}
+\index{go\_straight\_ahead@{go\_straight\_ahead}!go\_to\_point\_action@{go\_to\_point\_action}}
+\doxysubsubsection{\texorpdfstring{go\_straight\_ahead()}{go\_straight\_ahead()}}
+{\footnotesize\ttfamily def go\+\_\+to\+\_\+point\+\_\+action.\+go\+\_\+straight\+\_\+ahead (\begin{DoxyParamCaption}\item[{}]{des\+\_\+pos }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}This function takes the desired position data as argument. Calculate the 'desired yaw', 'yaw error' 
+and 'position error'  and based on these values calculates the required linear velocity and then 
+publishes it in the topic 'cmd_vel'. \end{DoxyVerb}
+ \mbox{\Hypertarget{namespacego__to__point__action_a33cfc08b34e07f53ddda67d2ab551ba1}\label{namespacego__to__point__action_a33cfc08b34e07f53ddda67d2ab551ba1}} 
+\index{go\_to\_point\_action@{go\_to\_point\_action}!main@{main}}
+\index{main@{main}!go\_to\_point\_action@{go\_to\_point\_action}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily def go\+\_\+to\+\_\+point\+\_\+action.\+main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}This function is a 'main' function of  'go_to_point' node. It initializes the subscribers for '/odom' 
+and '/control_speed' topics, publishers for '/cmd_vel', 'success_goals', '/cancel_goal', 'task_time'
+topics and lastly call the PositionAction service.  \end{DoxyVerb}
+ \mbox{\Hypertarget{namespacego__to__point__action_a0bca87c6d45ca63d3152a4e8def72e2a}\label{namespacego__to__point__action_a0bca87c6d45ca63d3152a4e8def72e2a}} 
+\index{go\_to\_point\_action@{go\_to\_point\_action}!normalize\_angle@{normalize\_angle}}
+\index{normalize\_angle@{normalize\_angle}!go\_to\_point\_action@{go\_to\_point\_action}}
+\doxysubsubsection{\texorpdfstring{normalize\_angle()}{normalize\_angle()}}
+{\footnotesize\ttfamily def go\+\_\+to\+\_\+point\+\_\+action.\+normalize\+\_\+angle (\begin{DoxyParamCaption}\item[{}]{angle }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}This is a function used for normalizing the orientation angle of robot from goal orientation. \end{DoxyVerb}
+ 

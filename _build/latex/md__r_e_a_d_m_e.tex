@@ -1,0 +1,152 @@
+The following repository contains the packages and the simulation environment for controlling a mobile robot in the Gazebo and Vrep simulator.\hypertarget{md__r_e_a_d_m_e_autotoc_md1}{}\doxysection{Project Installation\+:}\label{md__r_e_a_d_m_e_autotoc_md1}
+This project requires both R\+O\+S1 and R\+O\+S2 to be install in the system. Please make sure you have both of them installed before following the instructions. There are three branches in this respository and each one of them should be install in the following fashion.
+
+
+\begin{DoxyEnumerate}
+\item Code available in {\bfseries{Main}} branch is a R\+O\+S1 package should be install in R\+O\+S1 workspace \{ros1\+\_\+ws\}/src and to deploy successfully run the following command. 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{catkin\_make}
+\DoxyCodeLine{cd devel/}
+\DoxyCodeLine{source setup.bash}
+\end{DoxyCode}
+
+\item Code available in {\bfseries{ros2}} branch is a R\+O\+S2 package should be install in R\+O\+S2 workspace \{ros2\+\_\+ws\}/src and to deploy successfully run the following command. 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{colcon build -\/-\/packages-\/select rt2assignment\_package}
+\DoxyCodeLine{cd install/}
+\DoxyCodeLine{source local\_setup.bash}
+\end{DoxyCode}
+
+\item Code available in {\bfseries{sourcefiles}} branch is a set of source files that will be required to run the project. Please install them in your /root directory. Once the branch is cloned make all these files executable by running the following command for each of the bash files. 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{chmod +x <file\_name>}
+\end{DoxyCode}
+
+\end{DoxyEnumerate}
+\begin{DoxyEnumerate}
+\item This project requires both Gazebo and Vrep simulation environments, if they are not already installed in your system please install them by following given instructions\+:
+
+{\bfseries{For Gazebo \+:}}
+\begin{DoxyItemize}
+\item Please follow the instructions available on the respository.\+http\+://gazebosim.org/tutorials?tut=install\+\_\+ubuntu
+\end{DoxyItemize}
+
+{\bfseries{For Vrep/\+Coppeliasim \+:}}
+\begin{DoxyItemize}
+\item Download the P\+R\+O-\/\+E\+DU version from\+: \href{http://www.coppeliarobotics.com/downloads.html}{\texttt{ http\+://www.\+coppeliarobotics.\+com/downloads.\+html}}
+\item Vrep should be already integrated with R\+OS. You just need to launch the R\+OS master before running the V-\/\+R\+EP (Coppelia\+Sim) software.
+\item If there is any problem in building the plugin, you will need to recompile it by yourself\+: you can download it from here\+: Coppelia\+Robotics/sim\+Ext\+R\+OS (github.\+com).
+\item Please first install xsltproc \mbox{[}(sudo) apt-\/get install xsltproc\mbox{]} and xmlschema \mbox{[}pip3 install xmlschema\mbox{]}
+\item If specific messages/services/etc need to be supported, we have to make sure to edit files located in sim\+Ext\+R\+O\+S/meta/, prior to recompilation. So please check if the following to message type is already included or not in the sim\+Ext\+R\+O\+S/meta/message.\+txt \textquotesingle{}geometry\+\_\+msgs/\+Twist\textquotesingle{} \textquotesingle{}nav\+\_\+msgs/\+Odometry\textquotesingle{}
+\item In order to build the packages, navigate to the catkin\+\_\+ws folder and type\+: \`{}\`{}\`{} export C\+O\+P\+P\+E\+L\+I\+A\+S\+I\+M\+\_\+\+R\+O\+O\+T\+\_\+\+D\+IR=$\sim$/path/to/coppelia\+Sim/folder \`{}\`{}\`{}
+
+\`{}\`{}\`{} catkin\+\_\+make --cmake-\/args -\/D\+C\+M\+A\+K\+E\+\_\+\+B\+U\+I\+L\+D\+\_\+\+T\+Y\+PE=Release \`{}\`{}\`{} The packages should be generated and compiled to a library now. Copy the {\bfseries{devel/lib/libsim\+Ext\+R\+O\+S.\+so}} file in the Coppelia\+Sim installation folder. The plugin is now ready to be use.
+\item Now to launch Vep/\+Coppelia\+Sim you can run the following command. Make sure you are in the Vep/\+Coppelia\+Sim installation folder.
+
+\`{}\`{}\`{} ./coppeliasim.sh \`{}\`{}\`{}
+\end{DoxyItemize}
+\end{DoxyEnumerate}
+
+Once this is done. Next dependency that need to install is R\+O\+S1/\+R\+O\+S2 bridge package. Please install the package available on this repository\+: \href{https://github.com/ros2/ros1_bridge}{\texttt{ https\+://github.\+com/ros2/ros1\+\_\+bridge}}
+\begin{DoxyEnumerate}
+\item Once setup 5 is done we need to modify our .bashrc file, to have the possibility of using both R\+O\+S1 and R\+O\+S2 frameworks at the same time (in different terminal). For that please comment all bash files lines.
+\end{DoxyEnumerate}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\#source /opt/ros/noetic/setup.bash}
+\DoxyCodeLine{\#source /root/my\_ros/devel/setup.bash}
+\DoxyCodeLine{\#source /opt/ros/foxy/setup.bash}
+\DoxyCodeLine{\#source /root/my\_ros2/install/local\_setup.bash}
+\end{DoxyCode}
+
+
+
+\begin{DoxyEnumerate}
+\item If you are successfully able to complete all the previous steps then all the dependencies are completed in order to run the project.
+\end{DoxyEnumerate}
+
+The project in total have three parts, which can individually executed by following given instructions.\hypertarget{md__r_e_a_d_m_e_autotoc_md2}{}\doxysection{Part 1\+: Running Mobile Robot Simulation in Gazeboo using action server.}\label{md__r_e_a_d_m_e_autotoc_md2}
+Part1 of the project is consist of four main nodes.
+
+
+\begin{DoxyEnumerate}
+\item position\+\_\+service
+\item state\+\_\+machine\+\_\+action
+\item go\+\_\+to\+\_\+point\+\_\+action.\+py
+\item user\+\_\+interface\+\_\+action.\+py
+\end{DoxyEnumerate}
+
+\textquotesingle{}\mbox{\hyperlink{namespaceuser__interface__action}{user\+\_\+interface\+\_\+action}}\textquotesingle{} node communicates with the user and as per the provided commands, instruct the system to behave accordingly. If the user press 1 in the terminal, it request \textquotesingle{}/user interface\textquotesingle{} service which is host by \textquotesingle{}state\+\_\+machine\+\_\+action.\+py\textquotesingle{} node. Letting the node know that user have request for mobile robot to move. Therefore, upon receiving the service request from \textquotesingle{}user interface\textquotesingle{} node it request another service \textquotesingle{}/position server\textquotesingle{} which is hosted by \textquotesingle{}position service\textquotesingle{} node to randomly generate goal coordinates for the robot to follow. Once it receives the goal coordinates in response to the earlier request to \textquotesingle{}/position service\textquotesingle{} service, it pass these goal coordinates to an action service \char`\"{}/go\+\_\+to\+\_\+point\char`\"{} which is host by \textquotesingle{}go\+\_\+to\+\_\+point\+\_\+action.\+py\textquotesingle{} node. Once ‘go\+\_\+to\+\_\+point\+\_\+action.\+py’ node receives the goal coordinate it start computing required linear and angular velocity values for robot to reach that point and meanwhile start publishing it on ‘cmd\+\_\+vel’ topic which subscribed by Gazeebo. Since ‘/go\+\_\+to\+\_\+point’ is an action service therefore the user has the option to request cancelling the goal at any point during the execution. And for this purpose the ‘user interface’ node ask the user to press 0 in order to cancel the goal.
+
+In order to run this part please make sure you are in /root folder where you have already downloaded {\bfseries{rt2\+\_\+assignment\+\_\+1a.\+sh}} bash file. Open the terminal and run the following command.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{./rt2\_assignment\_1a.sh}
+\end{DoxyCode}
+
+
+After doing this you will see three terminal windows start appearing on the screen, including a Gazebo simulation with a mobile robot in it. Wait for the system load all the files. Find the terminal window with title {\bfseries{user\+\_\+interface}} which will be asking to press 1. Upon pressing 1, the mobile robot will start moving towards the randomly generated goal target. And if during the execution of this goal if you press 0 the robot will stop immediately.\hypertarget{md__r_e_a_d_m_e_autotoc_md3}{}\doxysection{Part 2\+: Running Mobile Robot Simulation in Gazeboo using R\+O\+S1/\+R\+O\+S2 Brigde}\label{md__r_e_a_d_m_e_autotoc_md3}
+From users prespective part 2 of this project is very similar to part 1. One of the two differences are mainly architecture based. First main difference is that half of this part is build in R\+O\+S1 and the other half is build in R\+O\+S2. So we are using R\+O\+S1/\+R\+O\+S2 brigde to make these two sub-\/parts communicate with each other. The second difference is that in this part we are using a simple server to provide randomly generated goal coordinates to \textquotesingle{}go\+\_\+to\+\_\+point\textquotesingle{} node instead of using action server like in part 1. Therefore unlike in part 1 robot will not immediately stop when we request to canncel the goal but after finishing the current goal.
+
+In R\+O\+S2 sub-\/part we have developed \textquotesingle{}state\+\_\+machine\textquotesingle{} and \textquotesingle{}position\+\_\+service\textquotesingle{} node as components, and by using the bridge, they are interface with the R\+O\+S1 nodes which is \textquotesingle{}user\+\_\+interface.\+py\textquotesingle{} and \textquotesingle{}go\+\_\+to\+\_\+point.\+py\textquotesingle{} and also with the simulation in Gazebo.
+
+In order to run this part please make sure you are in /root folder where you have already downloaded {\bfseries{rt2\+\_\+assignment\+\_\+1b.\+sh}} bash file. Open the terminal and run the following command.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{./rt2\_assignment\_1a.sh}
+\end{DoxyCode}
+
+
+After doing this you will see four terminal windows start appearing on the screen, including a Gazeebo simulation with a mobile robot in it. Wait for the system load all the files. Find the terminal window with title {\bfseries{user\+\_\+interface}} which will be asking to press 1. Upon pressing 1, the mobile robot will start moving towards the randomly generated goal target. And if during the execution of this goal if you press 0 the robot will not stop immediately since we are not using action server in this part. The robot will complete the last assigned target first before stopping.\hypertarget{md__r_e_a_d_m_e_autotoc_md4}{}\doxysection{Part 3\+: Running Mobile Robot Simulation in Vrep/\+Coppelia\+Sim simulation}\label{md__r_e_a_d_m_e_autotoc_md4}
+Part 3 of the project is also very similar with the part 1. The only difference is that we are using V\+Rep/\+Coppelia\+Sim simulation environement instead of Gazebo. To create a communication channel between the vrep scene and \textquotesingle{}go\+\_\+to\+\_\+point\+\_\+vrep.\+py\textquotesingle{} node a subscriber and a publisher has been develop. The publisher publishes the robot current odometry data in \textquotesingle{}/odom\textquotesingle{} topic which \textquotesingle{}go\+\_\+to\+\_\+point\+\_\+vrep.\+py\textquotesingle{} node subscribes and use it as a feedback to check how far the robot is from the goal and based on that compute new velocity commands and publishes it in the \textquotesingle{}\textbackslash{}cmd\+\_\+vel\textquotesingle{} topic.
+
+To run this part please following steps.
+
+
+\begin{DoxyEnumerate}
+\item Now make sure you are in /root folder where $\ast$$\ast$\textquotesingle{}ros.\+sh\textquotesingle{}$\ast$$\ast$ is downloaded. open the terminal and run the following commands.
+\end{DoxyEnumerate}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{source ros.sh}
+\end{DoxyCode}
+
+
+
+\begin{DoxyEnumerate}
+\item Now go to the R\+O\+S1 workspace and run the master by using following command\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{roscore \&}
+\end{DoxyCode}
+
+\item Then go to the Vrep/\+Coppelia\+Sim installation folder and to launch Vrep/\+Coppelia\+Sim run the following command.
+\end{DoxyEnumerate}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{./coppeliasim.sh }
+\end{DoxyCode}
+
+
+
+\begin{DoxyEnumerate}
+\item Wait for vrep simulation to get started. Then load the $\ast$$\ast$\textquotesingle{}pioneer\+R\+O\+S.\+ttt\textquotesingle{}$\ast$$\ast$ scene in the environment by clicking the {\bfseries{file/open scene..}} button in the main menu.
+\item Once the scene is loaded start the simulation by clicking on the play button in the top center. Unlike Gazebo the simulation does not automatically start in the vrep simulator.
+\item To run the program open another terminal window, go to the root folder again and run the following commands.
+\end{DoxyEnumerate}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{source ros.sh}
+\DoxyCodeLine{roslaunch rt2\_assignment1 sim\_vrep.launch}
+\end{DoxyCode}
+
+
+
+\begin{DoxyEnumerate}
+\item Once program is loaded it will be asking user to press 1. Upon pressing 1, the mobile robot will start moving towards the randomly generated goal target. And if during the execution of this goal if you press 0 the robot will not stop immediately. It will complete the last assigned target first and then stop. 
+\end{DoxyEnumerate}

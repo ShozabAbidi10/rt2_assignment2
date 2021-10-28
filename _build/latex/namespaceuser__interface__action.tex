@@ -1,0 +1,59 @@
+\hypertarget{namespaceuser__interface__action}{}\doxysection{user\+\_\+interface\+\_\+action Namespace Reference}
+\label{namespaceuser__interface__action}\index{user\_interface\_action@{user\_interface\_action}}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{namespaceuser__interface__action_aa0d5e19a7670afd775a5a831b5851961}{clbk\+\_\+user\+\_\+interface}} (msg)
+\item 
+def \mbox{\hyperlink{namespaceuser__interface__action_acca5b4d947fcea87e29e65b3fcded850}{main}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{namespaceuser__interface__action_a60979a91f8b5cb4621a3ca04baeac291}\label{namespaceuser__interface__action_a60979a91f8b5cb4621a3ca04baeac291}} 
+string {\bfseries value\+\_\+} = \char`\"{}-\/1\char`\"{}
+\item 
+\mbox{\Hypertarget{namespaceuser__interface__action_a3a7551628d9c90c46b53a93cf10878cf}\label{namespaceuser__interface__action_a3a7551628d9c90c46b53a93cf10878cf}} 
+string {\bfseries simulation\+\_\+} = \char`\"{}off\char`\"{}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}.. module:: user_interface_action
+:platform: Unix
+:synopsis: Python module for the user Interface
+
+.. moduleauthor:: Shozab Abidi <4929631@studenti.unige.it>
+
+This node implements an user interface
+
+Subscribers:
+/user_interface_sig topic where flag value publishes by the user to either start or stop the simulation.
+
+Service:
+/user_interface use to forward the user's request to either start or stop the simulation to the state_machine node .\end{DoxyVerb}
+ 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{namespaceuser__interface__action_aa0d5e19a7670afd775a5a831b5851961}\label{namespaceuser__interface__action_aa0d5e19a7670afd775a5a831b5851961}} 
+\index{user\_interface\_action@{user\_interface\_action}!clbk\_user\_interface@{clbk\_user\_interface}}
+\index{clbk\_user\_interface@{clbk\_user\_interface}!user\_interface\_action@{user\_interface\_action}}
+\doxysubsubsection{\texorpdfstring{clbk\_user\_interface()}{clbk\_user\_interface()}}
+{\footnotesize\ttfamily def user\+\_\+interface\+\_\+action.\+clbk\+\_\+user\+\_\+interface (\begin{DoxyParamCaption}\item[{}]{msg }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}This function takes the msg data of type String as an 
+arguement coming from the  '/user_interface_sig' topic 
+and store it in the global variable `value_`. \end{DoxyVerb}
+ \mbox{\Hypertarget{namespaceuser__interface__action_acca5b4d947fcea87e29e65b3fcded850}\label{namespaceuser__interface__action_acca5b4d947fcea87e29e65b3fcded850}} 
+\index{user\_interface\_action@{user\_interface\_action}!main@{main}}
+\index{main@{main}!user\_interface\_action@{user\_interface\_action}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily def user\+\_\+interface\+\_\+action.\+main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}This function initializes the ROS node and waits for the
+user to signal to start or stop the robot simulation, by relying
+on the `rospy <http://wiki.ros.org/rospy/>`_ module. The user
+instruction is publish in the ``user_interface_sig`` topic. Upon 
+user's instruction to start the simulation it send the signal to the
+'state_machine' node to start the 'random target position' simulation.\end{DoxyVerb}
+ 

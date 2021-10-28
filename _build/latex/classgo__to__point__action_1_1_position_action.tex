@@ -1,0 +1,64 @@
+\hypertarget{classgo__to__point__action_1_1_position_action}{}\doxysection{go\+\_\+to\+\_\+point\+\_\+action.\+Position\+Action Class Reference}
+\label{classgo__to__point__action_1_1_position_action}\index{go\_to\_point\_action.PositionAction@{go\_to\_point\_action.PositionAction}}
+
+
+Inheritance diagram for go\+\_\+to\+\_\+point\+\_\+action.\+Position\+Action\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=231pt]{classgo__to__point__action_1_1_position_action__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for go\+\_\+to\+\_\+point\+\_\+action.\+Position\+Action\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=231pt]{classgo__to__point__action_1_1_position_action__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{classgo__to__point__action_1_1_position_action_ae469fd2b8321fd26753e01d45ab7ec45}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self, name)
+\item 
+def \mbox{\hyperlink{classgo__to__point__action_1_1_position_action_af5038597f0c9d44e089f6e98293c35ca}{execute\+\_\+cb}} (self, goal)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}This class defines the 'go_to_point' action service through which 'state_machine' node assign 
+it goals. It also controls the internal state_machine of 'go_to_point' node which drives the robot
+from current position to goal position. During the simulation based on the robot state it generates
+and  publish feedbacks and insights which is use by jupyter notebook's user interface script.  \end{DoxyVerb}
+ 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classgo__to__point__action_1_1_position_action_ae469fd2b8321fd26753e01d45ab7ec45}\label{classgo__to__point__action_1_1_position_action_ae469fd2b8321fd26753e01d45ab7ec45}} 
+\index{go\_to\_point\_action.PositionAction@{go\_to\_point\_action.PositionAction}!\_\_init\_\_@{\_\_init\_\_}}
+\index{\_\_init\_\_@{\_\_init\_\_}!go\_to\_point\_action.PositionAction@{go\_to\_point\_action.PositionAction}}
+\doxysubsubsection{\texorpdfstring{\_\_init\_\_()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def go\+\_\+to\+\_\+point\+\_\+action.\+Position\+Action.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{name }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}This is a constructor function of the class and it defines the action service 'go_to_point'. \end{DoxyVerb}
+ 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classgo__to__point__action_1_1_position_action_af5038597f0c9d44e089f6e98293c35ca}\label{classgo__to__point__action_1_1_position_action_af5038597f0c9d44e089f6e98293c35ca}} 
+\index{go\_to\_point\_action.PositionAction@{go\_to\_point\_action.PositionAction}!execute\_cb@{execute\_cb}}
+\index{execute\_cb@{execute\_cb}!go\_to\_point\_action.PositionAction@{go\_to\_point\_action.PositionAction}}
+\doxysubsubsection{\texorpdfstring{execute\_cb()}{execute\_cb()}}
+{\footnotesize\ttfamily def go\+\_\+to\+\_\+point\+\_\+action.\+Position\+Action.\+execute\+\_\+cb (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{goal }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}This is a callback function for the service 'go_to_point'.
+This function execute when request is recieved from the client with arguement goal position. 
+After recieving the goal position it starts the internal state mahcine for driving the robot. This 
+function also updates and publishes some global variables which highlight some key insights 
+such as number of successful and cancelled goals, and list of time taken by 
+the robot to reach the targets.\end{DoxyVerb}
+ 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+scripts/go\+\_\+to\+\_\+point\+\_\+action.\+py\end{DoxyCompactItemize}

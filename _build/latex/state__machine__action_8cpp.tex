@@ -1,0 +1,129 @@
+\hypertarget{state__machine__action_8cpp}{}\doxysection{src/state\+\_\+machine\+\_\+action.cpp File Reference}
+\label{state__machine__action_8cpp}\index{src/state\_machine\_action.cpp@{src/state\_machine\_action.cpp}}
+
+
+This files contains code for the \textquotesingle{}state\+\_\+machine\textquotesingle{} node.  
+
+
+{\ttfamily \#include \char`\"{}ros/ros.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}rt2\+\_\+assignment1/\+Command.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}rt2\+\_\+assignment1/\+Position.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}rt2\+\_\+assignment1/\+Random\+Position.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$actionlib/client/simple\+\_\+action\+\_\+client.\+h$>$}\newline
+{\ttfamily \#include $<$actionlib/client/terminal\+\_\+state.\+h$>$}\newline
+{\ttfamily \#include $<$rt2\+\_\+assignment1/\+Position\+Action.\+h$>$}\newline
+{\ttfamily \#include $<$typeinfo$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+Include dependency graph for state\+\_\+machine\+\_\+action.\+cpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{state__machine__action_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{state__machine__action_8cpp_add4e8a72af0092f8a6af8fade0922430}\label{state__machine__action_8cpp_add4e8a72af0092f8a6af8fade0922430}} 
+typedef actionlib\+::\+Simple\+Action\+Client$<$ rt2\+\_\+assignment1\+::\+Position\+Action $>$ {\bfseries State\+Machine\+Client}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{state__machine__action_8cpp_a1a9543636935547580c0657f4c7c0c2b}{user\+\_\+interface}} (rt2\+\_\+assignment1\+::\+Command\+::\+Request \&req, rt2\+\_\+assignment1\+::\+Command\+::\+Response \&res)
+\begin{DoxyCompactList}\small\item\em A callback function of the client for the \textquotesingle{}user\+\_\+interface\textquotesingle{}. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{state__machine__action_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}{main}} (int argc, char $\ast$$\ast$argv)
+\begin{DoxyCompactList}\small\item\em The main function of the node \textquotesingle{}state\+\_\+machine\textquotesingle{}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{state__machine__action_8cpp_a192e1eea0694845660bb87e0177da9aa}{start\+\_\+}} = -\/1
+\begin{DoxyCompactList}\small\item\em $<$ Global variable used as a flag to start the simulation. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{state__machine__action_8cpp_a9acf5084c965a76d24ec228412256bc3}\label{state__machine__action_8cpp_a9acf5084c965a76d24ec228412256bc3}} 
+int \mbox{\hyperlink{state__machine__action_8cpp_a9acf5084c965a76d24ec228412256bc3}{count\+\_\+}} = 0
+\begin{DoxyCompactList}\small\item\em Global variable used to store the state of assigned action. ~\newline
+ \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{state__machine__action_8cpp_a1af6467172efaf288c61934c9b0055f0}\label{state__machine__action_8cpp_a1af6467172efaf288c61934c9b0055f0}} 
+std\+::string {\bfseries Check\+\_\+} = \char`\"{}non\char`\"{}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This files contains code for the \textquotesingle{}state\+\_\+machine\textquotesingle{} node. 
+
+\begin{DoxyAuthor}{Author}
+Shozab Abidi 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+25/10/2021
+\end{DoxyDate}
+Services \+: ~\newline
+ ° /user\+\_\+interface ° /position\+\_\+server
+
+Action Clients / Services \+: ~\newline
+ ° /\+Position\+Action
+
+Description \+:
+
+This node implements the state machine of the project. When the user starts the simulation, it receives a \textquotesingle{}string input\textquotesingle{} as request to the service \textquotesingle{}/user interface\textquotesingle{} from $\ast$ \textquotesingle{}\mbox{\hyperlink{namespaceuser__interface__action}{user\+\_\+interface\+\_\+action}}\textquotesingle{} node. The \textquotesingle{}string input\textquotesingle{} value act as a flag to signal the node to start the state machine loop in which it request another service \textquotesingle{}/position\+\_\+server\textquotesingle{} $\ast$ which is hosted by \textquotesingle{}position\+\_\+service\textquotesingle{} node to randomly generate goal coordinates for the robot to follow. Once it receives the goal coordinates in response to the earlier $\ast$ request to the service, it pass these goal coordinates to an action service \textquotesingle{}/go\+\_\+to\+\_\+point\textquotesingle{} which is host by \textquotesingle{}go\+\_\+to\+\_\+point\+\_\+action.\+py\textquotesingle{} node. 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{state__machine__action_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}\label{state__machine__action_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}} 
+\index{state\_machine\_action.cpp@{state\_machine\_action.cpp}!main@{main}}
+\index{main@{main}!state\_machine\_action.cpp@{state\_machine\_action.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$$\ast$}]{argv }\end{DoxyParamCaption})}
+
+
+
+The main function of the node \textquotesingle{}state\+\_\+machine\textquotesingle{}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em argc} & an integer arguement ~\newline
+ \\
+\hline
+{\em argv} & an string double pointer arguement.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+always return 0 as this function cannot fail.
+\end{DoxyReturn}
+This function initialize the ros node \textquotesingle{}state\+\_\+machine\textquotesingle{}, client for service \textquotesingle{}/position\+\_\+server\textquotesingle{}, action client for action service \textquotesingle{}/go\+\_\+to\+\_\+point\textquotesingle{}, advertise the service \textquotesingle{}/user $\ast$ interface\textquotesingle{} and implement state machine loop for the simulation. \mbox{\Hypertarget{state__machine__action_8cpp_a1a9543636935547580c0657f4c7c0c2b}\label{state__machine__action_8cpp_a1a9543636935547580c0657f4c7c0c2b}} 
+\index{state\_machine\_action.cpp@{state\_machine\_action.cpp}!user\_interface@{user\_interface}}
+\index{user\_interface@{user\_interface}!state\_machine\_action.cpp@{state\_machine\_action.cpp}}
+\doxysubsubsection{\texorpdfstring{user\_interface()}{user\_interface()}}
+{\footnotesize\ttfamily bool user\+\_\+interface (\begin{DoxyParamCaption}\item[{rt2\+\_\+assignment1\+::\+Command\+::\+Request \&}]{req,  }\item[{rt2\+\_\+assignment1\+::\+Command\+::\+Response \&}]{res }\end{DoxyParamCaption})}
+
+
+
+A callback function of the client for the \textquotesingle{}user\+\_\+interface\textquotesingle{}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em req} & request arguement of the service \textquotesingle{}user\+\_\+interface\textquotesingle{} with data type Command.\+Requesy \\
+\hline
+{\em res} & response arguement of the service \textquotesingle{}user\+\_\+interface\textquotesingle{} with data type Command.\+Response \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+always true as this method cannot fail.
+\end{DoxyReturn}
+This function change the flag variable \textquotesingle{}start\+\_\+\textquotesingle{} value according to the user\textquotesingle{}s instruction which will either start or stop the simulation. 
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{state__machine__action_8cpp_a192e1eea0694845660bb87e0177da9aa}\label{state__machine__action_8cpp_a192e1eea0694845660bb87e0177da9aa}} 
+\index{state\_machine\_action.cpp@{state\_machine\_action.cpp}!start\_@{start\_}}
+\index{start\_@{start\_}!state\_machine\_action.cpp@{state\_machine\_action.cpp}}
+\doxysubsubsection{\texorpdfstring{start\_}{start\_}}
+{\footnotesize\ttfamily int start\+\_\+ = -\/1}
+
+
+
+$<$ Global variable used as a flag to start the simulation. 
+
+Global variable used to control the state machine loop. ~\newline
+ 
