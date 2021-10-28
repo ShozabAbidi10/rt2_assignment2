@@ -1,0 +1,95 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="namespaceuser__interface__action" kind="namespace" language="Python">
+    <compoundname>user_interface_action</compoundname>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="namespaceuser__interface__action_1a60979a91f8b5cb4621a3ca04baeac291" prot="public" static="no" mutable="no">
+        <type>string</type>
+        <definition>string user_interface_action.value_</definition>
+        <argsstring></argsstring>
+        <name>value_</name>
+        <initializer>=  &quot;-1&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="scripts/user_interface_action.py" line="24" column="1" bodyfile="scripts/user_interface_action.py" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespaceuser__interface__action_1a3a7551628d9c90c46b53a93cf10878cf" prot="public" static="no" mutable="no">
+        <type>string</type>
+        <definition>string user_interface_action.simulation_</definition>
+        <argsstring></argsstring>
+        <name>simulation_</name>
+        <initializer>=  &quot;off&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="scripts/user_interface_action.py" line="29" column="1" bodyfile="scripts/user_interface_action.py" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="namespaceuser__interface__action_1aa0d5e19a7670afd775a5a831b5851961" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def user_interface_action.clbk_user_interface</definition>
+        <argsstring>(msg)</argsstring>
+        <name>clbk_user_interface</name>
+        <param>
+          <type>msg</type>
+          <defname>msg</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>This function takes the msg data of type String as an 
+arguement coming from the  &apos;/user_interface_sig&apos; topic 
+and store it in the global variable `value_`. </verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="scripts/user_interface_action.py" line="35" column="1" bodyfile="scripts/user_interface_action.py" bodystart="35" bodyend="47"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceuser__interface__action_1acca5b4d947fcea87e29e65b3fcded850" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def user_interface_action.main</definition>
+        <argsstring>()</argsstring>
+        <name>main</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>This function initializes the ROS node and waits for the
+user to signal to start or stop the robot simulation, by relying
+on the `rospy &lt;http://wiki.ros.org/rospy/&gt;`_ module. The user
+instruction is publish in the ``user_interface_sig`` topic. Upon 
+user&apos;s instruction to start the simulation it send the signal to the
+&apos;state_machine&apos; node to start the &apos;random target position&apos; simulation.</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="scripts/user_interface_action.py" line="48" column="1" bodyfile="scripts/user_interface_action.py" bodystart="48" bodyend="73"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><verbatim>.. module:: user_interface_action
+:platform: Unix
+:synopsis: Python module for the user Interface
+
+.. moduleauthor:: Shozab Abidi &lt;4929631@studenti.unige.it&gt;
+
+This node implements an user interface
+
+Subscribers:
+/user_interface_sig topic where flag value publishes by the user to either start or stop the simulation.
+
+Service:
+/user_interface use to forward the user&apos;s request to either start or stop the simulation to the state_machine node .</verbatim> </para>
+    </detaileddescription>
+    <location file="scripts/user_interface_action.py" line="1" column="1"/>
+  </compounddef>
+</doxygen>

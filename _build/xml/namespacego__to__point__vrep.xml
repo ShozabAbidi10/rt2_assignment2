@@ -1,0 +1,328 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="namespacego__to__point__vrep" kind="namespace" language="Python">
+    <compoundname>go_to_point_vrep</compoundname>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="go__to__point__vrep_8py_1ab4a84da6490c40d412b02658f96964ed" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>int go_to_point_vrep::position_</definition>
+        <argsstring></argsstring>
+        <name>position_</name>
+        <initializer>=  Point()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="scripts/go_to_point_vrep.py" line="12" column="1" bodyfile="scripts/go_to_point_vrep.py" bodystart="12" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="go__to__point__vrep_8py_1ad9477e40e62a042047f41329795be08c" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int go_to_point_vrep.yaw_</definition>
+        <argsstring></argsstring>
+        <name>yaw_</name>
+        <initializer>=  0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="scripts/go_to_point_vrep.py" line="13" column="1" bodyfile="scripts/go_to_point_vrep.py" bodystart="13" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="go__to__point__vrep_8py_1a6a8eab86307bed727ad6137a885f306c" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int go_to_point_vrep.state_</definition>
+        <argsstring></argsstring>
+        <name>state_</name>
+        <initializer>=  0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="scripts/go_to_point_vrep.py" line="15" column="1" bodyfile="scripts/go_to_point_vrep.py" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="go__to__point__vrep_8py_1afc369614e3f0e1551be5c1ccb6f7f311" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>go_to_point_vrep.pub_</definition>
+        <argsstring></argsstring>
+        <name>pub_</name>
+        <initializer>=  None</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="scripts/go_to_point_vrep.py" line="16" column="1" bodyfile="scripts/go_to_point_vrep.py" bodystart="16" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="go__to__point__vrep_8py_1ac43f622a636ae2f4a0b11e0f7021a411" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int go_to_point_vrep.yaw_precision_</definition>
+        <argsstring></argsstring>
+        <name>yaw_precision_</name>
+        <initializer>=  math.pi / 9</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="scripts/go_to_point_vrep.py" line="19" column="1" bodyfile="scripts/go_to_point_vrep.py" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="go__to__point__vrep_8py_1a3805691da37f0fe2243fca7833264601" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int go_to_point_vrep.yaw_precision_2_</definition>
+        <argsstring></argsstring>
+        <name>yaw_precision_2_</name>
+        <initializer>=  math.pi / 90</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="scripts/go_to_point_vrep.py" line="20" column="1" bodyfile="scripts/go_to_point_vrep.py" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="go__to__point__vrep_8py_1a9ec9f71c18e33c990f1ca19f10119e98" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float go_to_point_vrep.dist_precision_</definition>
+        <argsstring></argsstring>
+        <name>dist_precision_</name>
+        <initializer>=  0.1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="scripts/go_to_point_vrep.py" line="21" column="1" bodyfile="scripts/go_to_point_vrep.py" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="go__to__point__vrep_8py_1a9a89f5a33737b3d9cacd7a571b46f556" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float go_to_point_vrep.kp_a</definition>
+        <argsstring></argsstring>
+        <name>kp_a</name>
+        <initializer>=  -3.0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="scripts/go_to_point_vrep.py" line="22" column="1" bodyfile="scripts/go_to_point_vrep.py" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="go__to__point__vrep_8py_1abe877ce639bc783c40f870344a280ed6" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float go_to_point_vrep.kp_d</definition>
+        <argsstring></argsstring>
+        <name>kp_d</name>
+        <initializer>=  0.2</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="scripts/go_to_point_vrep.py" line="23" column="1" bodyfile="scripts/go_to_point_vrep.py" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="go__to__point__vrep_8py_1af0534e4fa517e5598a0211c8c78e0db7" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float go_to_point_vrep.ub_a</definition>
+        <argsstring></argsstring>
+        <name>ub_a</name>
+        <initializer>=  0.6</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="scripts/go_to_point_vrep.py" line="24" column="1" bodyfile="scripts/go_to_point_vrep.py" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="go__to__point__vrep_8py_1aca703a0d385f9a407331955dc2085db4" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float go_to_point_vrep.lb_a</definition>
+        <argsstring></argsstring>
+        <name>lb_a</name>
+        <initializer>=  -0.5</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="scripts/go_to_point_vrep.py" line="25" column="1" bodyfile="scripts/go_to_point_vrep.py" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="go__to__point__vrep_8py_1a5562631da682fc67dc6a1751f30d7c01" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float go_to_point_vrep.ub_d</definition>
+        <argsstring></argsstring>
+        <name>ub_d</name>
+        <initializer>=  0.6</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="scripts/go_to_point_vrep.py" line="26" column="1" bodyfile="scripts/go_to_point_vrep.py" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="go__to__point__vrep_8py_1adc49be43da84645c6cc22d4dcabbb743" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def go_to_point_vrep.clbk_odom</definition>
+        <argsstring>(msg)</argsstring>
+        <name>clbk_odom</name>
+        <param>
+          <type>msg</type>
+          <defname>msg</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="scripts/go_to_point_vrep.py" line="28" column="1" bodyfile="scripts/go_to_point_vrep.py" bodystart="28" bodyend="46"/>
+      </memberdef>
+      <memberdef kind="function" id="go__to__point__vrep_8py_1a10a4768da79975c7d578d06a5f8e17a1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def go_to_point_vrep.change_state</definition>
+        <argsstring>(state)</argsstring>
+        <name>change_state</name>
+        <param>
+          <type>state</type>
+          <defname>state</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="scripts/go_to_point_vrep.py" line="47" column="1" bodyfile="scripts/go_to_point_vrep.py" bodystart="47" bodyend="52"/>
+      </memberdef>
+      <memberdef kind="function" id="go__to__point__vrep_8py_1a85423346028131fc57eda486e62df069" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def go_to_point_vrep.normalize_angle</definition>
+        <argsstring>(angle)</argsstring>
+        <name>normalize_angle</name>
+        <param>
+          <type>angle</type>
+          <defname>angle</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="scripts/go_to_point_vrep.py" line="53" column="1" bodyfile="scripts/go_to_point_vrep.py" bodystart="53" bodyend="57"/>
+      </memberdef>
+      <memberdef kind="function" id="go__to__point__vrep_8py_1a66f802eaf6389084cab892195137399c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def go_to_point_vrep.fix_yaw</definition>
+        <argsstring>(des_pos)</argsstring>
+        <name>fix_yaw</name>
+        <param>
+          <type>des_pos</type>
+          <defname>des_pos</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="scripts/go_to_point_vrep.py" line="58" column="1" bodyfile="scripts/go_to_point_vrep.py" bodystart="58" bodyend="75"/>
+      </memberdef>
+      <memberdef kind="function" id="go__to__point__vrep_8py_1ad01ac9fa7b9e543901d6eb0777c49558" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def go_to_point_vrep.go_straight_ahead</definition>
+        <argsstring>(des_pos)</argsstring>
+        <name>go_straight_ahead</name>
+        <param>
+          <type>des_pos</type>
+          <defname>des_pos</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="scripts/go_to_point_vrep.py" line="76" column="1" bodyfile="scripts/go_to_point_vrep.py" bodystart="76" bodyend="100"/>
+      </memberdef>
+      <memberdef kind="function" id="go__to__point__vrep_8py_1a08cb5e6d66c59dbb184fcd95fc54fdce" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def go_to_point_vrep.fix_final_yaw</definition>
+        <argsstring>(des_yaw)</argsstring>
+        <name>fix_final_yaw</name>
+        <param>
+          <type>des_yaw</type>
+          <defname>des_yaw</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="scripts/go_to_point_vrep.py" line="101" column="1" bodyfile="scripts/go_to_point_vrep.py" bodystart="101" bodyend="116"/>
+      </memberdef>
+      <memberdef kind="function" id="go__to__point__vrep_8py_1a38ce6ba4516d68a7710e943973378775" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def go_to_point_vrep.done</definition>
+        <argsstring>()</argsstring>
+        <name>done</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="scripts/go_to_point_vrep.py" line="117" column="1" bodyfile="scripts/go_to_point_vrep.py" bodystart="117" bodyend="122"/>
+      </memberdef>
+      <memberdef kind="function" id="go__to__point__vrep_8py_1a645a5761ba339ac32cb7d447cef33016" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def go_to_point_vrep.go_to_point</definition>
+        <argsstring>(req)</argsstring>
+        <name>go_to_point</name>
+        <param>
+          <type>req</type>
+          <defname>req</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="scripts/go_to_point_vrep.py" line="123" column="1" bodyfile="scripts/go_to_point_vrep.py" bodystart="123" bodyend="140"/>
+      </memberdef>
+      <memberdef kind="function" id="go__to__point__vrep_8py_1affc2f946b6a1f679e574af95a987933a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def go_to_point_vrep.main</definition>
+        <argsstring>()</argsstring>
+        <name>main</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="scripts/go_to_point_vrep.py" line="141" column="1" bodyfile="scripts/go_to_point_vrep.py" bodystart="141" bodyend="148"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="scripts/go_to_point_vrep.py" line="1" column="1"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,145 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="_r_e_a_d_m_e_8md" kind="file" language="Markdown">
+    <compoundname>README.md</compoundname>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline><highlight class="normal">#<sp/>Assignment<sp/>1<sp/>of<sp/>the<sp/>Research<sp/>Track<sp/>2<sp/>course<sp/>(MSc<sp/>Robotics<sp/>Engineering,<sp/>Unige)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">The<sp/>following<sp/>repository<sp/>contains<sp/>the<sp/>packages<sp/>and<sp/>the<sp/>simulation<sp/>environment<sp/>for<sp/>controlling<sp/>a<sp/>mobile<sp/>robot<sp/>in<sp/>the<sp/>Gazebo<sp/>and<sp/>Vrep<sp/>simulator.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Project<sp/>Installation:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">This<sp/>project<sp/>requires<sp/>both<sp/>ROS1<sp/>and<sp/>ROS2<sp/>to<sp/>be<sp/>install<sp/>in<sp/>the<sp/>system.<sp/>Please<sp/>make<sp/>sure<sp/>you<sp/>have<sp/>both<sp/>of<sp/>them<sp/>installed<sp/>before<sp/>following<sp/>the<sp/>instructions.<sp/>There<sp/>are<sp/>three<sp/>branches<sp/>in<sp/>this<sp/>respository<sp/>and<sp/>each<sp/>one<sp/>of<sp/>them<sp/>should<sp/>be<sp/>install<sp/>in<sp/>the<sp/>following<sp/>fashion.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">1.<sp/>Code<sp/>available<sp/>in<sp/>**Main**<sp/>branch<sp/>is<sp/>a<sp/>ROS1<sp/>package<sp/>should<sp/>be<sp/>install<sp/>in<sp/>ROS1<sp/>workspace<sp/>{ros1_ws}/src<sp/>and<sp/>to<sp/>deploy<sp/>successfully<sp/>run<sp/>the<sp/>following<sp/>command.</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">catkin_make</highlight></codeline>
+<codeline><highlight class="normal">cd<sp/>devel/</highlight></codeline>
+<codeline><highlight class="normal">source<sp/>setup.bash</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">3.<sp/>Code<sp/>available<sp/>in<sp/>**ros2**<sp/>branch<sp/>is<sp/>a<sp/>ROS2<sp/>package<sp/>should<sp/>be<sp/>install<sp/>in<sp/>ROS2<sp/>workspace<sp/>{ros2_ws}/src<sp/>and<sp/>to<sp/>deploy<sp/>successfully<sp/>run<sp/>the<sp/>following<sp/>command.</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">colcon<sp/>build<sp/>--packages-select<sp/>rt2assignment_package</highlight></codeline>
+<codeline><highlight class="normal">cd<sp/>install/</highlight></codeline>
+<codeline><highlight class="normal">source<sp/>local_setup.bash</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">5.<sp/>Code<sp/>available<sp/>in<sp/>**sourcefiles**<sp/>branch<sp/>is<sp/>a<sp/>set<sp/>of<sp/>source<sp/>files<sp/>that<sp/>will<sp/>be<sp/>required<sp/>to<sp/>run<sp/>the<sp/>project.<sp/>Please<sp/>install<sp/>them<sp/>in<sp/>your<sp/>/root<sp/>directory.<sp/>Once<sp/>the<sp/>branch<sp/>is<sp/>cloned<sp/>make<sp/>all<sp/>these<sp/>files<sp/>executable<sp/>by<sp/>running<sp/>the<sp/>following<sp/>command<sp/>for<sp/>each<sp/>of<sp/>the<sp/>bash<sp/>files.</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">chmod<sp/>+x<sp/>&lt;file_name&gt;</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">5.<sp/>This<sp/>project<sp/>requires<sp/>both<sp/>Gazebo<sp/>and<sp/>Vrep<sp/>simulation<sp/>environments,<sp/>if<sp/>they<sp/>are<sp/>not<sp/>already<sp/>installed<sp/>in<sp/>your<sp/>system<sp/>please<sp/>install<sp/>them<sp/>by<sp/>following<sp/>given<sp/>instructions:<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/>**For<sp/>Gazebo<sp/>:**<sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>*<sp/>Please<sp/>follow<sp/>the<sp/>instructions<sp/>available<sp/>on<sp/>the<sp/>respository.http://gazebosim.org/tutorials?tut=install_ubuntu</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>**For<sp/>Vrep/Coppeliasim<sp/>:**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>*<sp/>Download<sp/>the<sp/>PRO-EDU<sp/>version<sp/>from:<sp/>http://www.coppeliarobotics.com/downloads.html</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>*<sp/>Vrep<sp/>should<sp/>be<sp/>already<sp/>integrated<sp/>with<sp/>ROS.<sp/>You<sp/>just<sp/>need<sp/>to<sp/>launch<sp/>the<sp/>ROS<sp/>master<sp/>before<sp/>running<sp/>the<sp/>V-REP<sp/>(CoppeliaSim)<sp/>software.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>*<sp/>If<sp/>there<sp/>is<sp/>any<sp/>problem<sp/>in<sp/>building<sp/>the<sp/>plugin,<sp/>you<sp/>will<sp/>need<sp/>to<sp/>recompile<sp/>it<sp/>by<sp/>yourself:<sp/>you<sp/>can<sp/>download<sp/>it<sp/>from<sp/>here:<sp/>CoppeliaRobotics/simExtROS<sp/>(github.com).</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>*<sp/>Please<sp/>first<sp/>install<sp/>xsltproc<sp/>[(sudo)<sp/>apt-get<sp/>install<sp/>xsltproc]<sp/>and<sp/>xmlschema<sp/>[pip3<sp/>install<sp/>xmlschema]</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>*<sp/>If<sp/>specific<sp/>messages/services/etc<sp/>need<sp/>to<sp/>be<sp/>supported,<sp/>we<sp/>have<sp/>to<sp/>make<sp/>sure<sp/>to<sp/>edit<sp/>files<sp/>located<sp/>in<sp/>simExtROS/meta/,<sp/>prior<sp/>to<sp/>recompilation.<sp/>So<sp/>please<sp/>check<sp/>if<sp/>the<sp/>following<sp/>to<sp/>message<sp/>type<sp/>is<sp/>already<sp/>included<sp/>or<sp/>not<sp/>in<sp/>the<sp/>simExtROS/meta/message.txt<sp/>&apos;geometry_msgs/Twist&apos;<sp/>&apos;nav_msgs/Odometry&apos;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>*<sp/>In<sp/>order<sp/>to<sp/>build<sp/>the<sp/>packages,<sp/>navigate<sp/>to<sp/>the<sp/>catkin_ws<sp/>folder<sp/>and<sp/>type:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>```</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>export<sp/>COPPELIASIM_ROOT_DIR=~/path/to/coppeliaSim/folder</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>```</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>```</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>catkin_make<sp/>--cmake-args<sp/>-DCMAKE_BUILD_TYPE=Release</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>```</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>The<sp/>packages<sp/>should<sp/>be<sp/>generated<sp/>and<sp/>compiled<sp/>to<sp/>a<sp/>library<sp/>now.<sp/>Copy<sp/>the<sp/>**devel/lib/libsimExtROS.so**<sp/>file<sp/>in<sp/>the<sp/>CoppeliaSim<sp/>installation<sp/>folder.<sp/>The<sp/>plugin<sp/>is<sp/>now<sp/>ready<sp/><sp/><sp/><sp/><sp/>to<sp/>be<sp/>use.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>*<sp/><sp/>Now<sp/>to<sp/>launch<sp/>Vep/CoppeliaSim<sp/>you<sp/>can<sp/>run<sp/>the<sp/>following<sp/>command.<sp/>Make<sp/>sure<sp/>you<sp/>are<sp/>in<sp/>the<sp/>Vep/CoppeliaSim<sp/>installation<sp/>folder.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>```</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>./coppeliasim.sh<sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>```</highlight></codeline>
+<codeline><highlight class="normal"><sp/>5.<sp/>Once<sp/>this<sp/>is<sp/>done.<sp/>Next<sp/>dependency<sp/>that<sp/>need<sp/>to<sp/>install<sp/>is<sp/>ROS1/ROS2<sp/>bridge<sp/>package.<sp/>Please<sp/>install<sp/>the<sp/>package<sp/>available<sp/>on<sp/>this<sp/>repository:<sp/>https://github.com/ros2/ros1_bridge<sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/>6.<sp/>Once<sp/>setup<sp/>5<sp/>is<sp/>done<sp/>we<sp/>need<sp/>to<sp/>modify<sp/>our<sp/>.bashrc<sp/>file,<sp/>to<sp/>have<sp/>the<sp/>possibility<sp/>of<sp/>using<sp/>both<sp/>ROS1<sp/>and<sp/>ROS2<sp/>frameworks<sp/>at<sp/>the<sp/>same<sp/>time<sp/>(in<sp/>different</highlight></codeline>
+<codeline><highlight class="normal">terminal).<sp/>For<sp/>that<sp/>please<sp/>comment<sp/>all<sp/>bash<sp/>files<sp/>lines.<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/>```</highlight></codeline>
+<codeline><highlight class="normal"><sp/>#source<sp/>/opt/ros/noetic/setup.bash</highlight></codeline>
+<codeline><highlight class="normal"><sp/>#source<sp/>/root/my_ros/devel/setup.bash</highlight></codeline>
+<codeline><highlight class="normal"><sp/>#source<sp/>/opt/ros/foxy/setup.bash</highlight></codeline>
+<codeline><highlight class="normal"><sp/>#source<sp/>/root/my_ros2/install/local_setup.bash</highlight></codeline>
+<codeline><highlight class="normal"><sp/>```</highlight></codeline>
+<codeline><highlight class="normal"><sp/>7.<sp/>If<sp/>you<sp/>are<sp/>successfully<sp/>able<sp/>to<sp/>complete<sp/>all<sp/>the<sp/>previous<sp/>steps<sp/>then<sp/>all<sp/>the<sp/>dependencies<sp/>are<sp/>completed<sp/>in<sp/>order<sp/>to<sp/>run<sp/>the<sp/>project.<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">The<sp/>project<sp/>in<sp/>total<sp/>have<sp/>three<sp/>parts,<sp/>which<sp/>can<sp/>individually<sp/>executed<sp/>by<sp/>following<sp/>given<sp/>instructions.<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Part<sp/>1:<sp/>Running<sp/>Mobile<sp/>Robot<sp/>Simulation<sp/>in<sp/>Gazeboo<sp/>using<sp/>action<sp/>server.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Part1<sp/>of<sp/>the<sp/>project<sp/>is<sp/>consist<sp/>of<sp/>four<sp/>main<sp/>nodes.<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">1.<sp/>position_service<sp/></highlight></codeline>
+<codeline><highlight class="normal">2.<sp/>state_machine_action<sp/></highlight></codeline>
+<codeline><highlight class="normal">3.<sp/>go_to_point_action.py</highlight></codeline>
+<codeline><highlight class="normal">4.<sp/>user_interface_action.py</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">&apos;user_interface_action&apos;<sp/>node<sp/>communicates<sp/>with<sp/>the<sp/>user<sp/>and<sp/>as<sp/>per<sp/>the<sp/>provided<sp/>commands,<sp/>instruct<sp/>the<sp/>system<sp/>to<sp/>behave<sp/>accordingly.<sp/>If<sp/>the<sp/>user<sp/>press<sp/>1<sp/>in<sp/>the<sp/>terminal,<sp/>it<sp/>request<sp/>&apos;/user<sp/>interface&apos;<sp/>service<sp/>which<sp/>is<sp/>host<sp/>by<sp/>&apos;state_machine_action.py&apos;<sp/>node.<sp/>Letting<sp/>the<sp/>node<sp/>know<sp/>that<sp/>user<sp/>have<sp/>request<sp/>for<sp/>mobile<sp/>robot<sp/>to<sp/>move.<sp/>Therefore,<sp/>upon<sp/>receiving<sp/>the<sp/>service<sp/>request<sp/>from<sp/>&apos;user<sp/>interface&apos;<sp/>node<sp/>it<sp/>request<sp/>another<sp/>service<sp/>&apos;/position<sp/>server&apos;<sp/>which<sp/>is<sp/>hosted<sp/>by<sp/>&apos;position<sp/>service&apos;<sp/>node<sp/>to<sp/>randomly<sp/>generate<sp/>goal<sp/>coordinates<sp/>for<sp/>the<sp/>robot<sp/>to<sp/>follow.<sp/>Once<sp/>it<sp/>receives<sp/>the<sp/>goal<sp/>coordinates<sp/>in<sp/>response<sp/>to<sp/>the<sp/>earlier<sp/>request<sp/>to<sp/>&apos;/position<sp/>service&apos;<sp/>service,<sp/>it<sp/>pass<sp/>these<sp/>goal<sp/>coordinates<sp/>to<sp/>an<sp/>action<sp/>service<sp/>&quot;/go_to_point&quot;<sp/>which<sp/>is<sp/>host<sp/>by<sp/>&apos;go_to_point_action.py&apos;<sp/>node.<sp/>Once<sp/>‘go_to_point_action.py’<sp/>node<sp/>receives<sp/>the<sp/>goal<sp/>coordinate<sp/>it<sp/>start<sp/>computing<sp/>required<sp/>linear<sp/>and<sp/>angular<sp/>velocity<sp/>values<sp/>for<sp/>robot<sp/>to<sp/>reach<sp/>that<sp/>point<sp/>and<sp/>meanwhile<sp/>start<sp/>publishing<sp/>it<sp/>on<sp/>‘cmd_vel’<sp/>topic<sp/>which<sp/>subscribed<sp/>by<sp/>Gazeebo.<sp/>Since<sp/>‘/go_to_point’<sp/>is<sp/>an<sp/>action<sp/>service<sp/>therefore<sp/>the<sp/>user<sp/>has<sp/>the<sp/>option<sp/>to<sp/>request<sp/>cancelling<sp/>the<sp/>goal<sp/>at<sp/>any<sp/>point<sp/>during<sp/>the<sp/>execution.<sp/>And<sp/>for<sp/>this<sp/>purpose<sp/>the<sp/>‘user<sp/>interface’<sp/>node<sp/>ask<sp/>the<sp/>user<sp/>to<sp/>press<sp/>0<sp/>in<sp/>order<sp/>to<sp/>cancel<sp/>the<sp/>goal.<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">In<sp/>order<sp/>to<sp/>run<sp/>this<sp/>part<sp/>please<sp/>make<sp/>sure<sp/>you<sp/>are<sp/>in<sp/>/root<sp/>folder<sp/>where<sp/>you<sp/>have<sp/>already<sp/>downloaded<sp/>**rt2_assignment_1a.sh**<sp/>bash<sp/>file.<sp/>Open<sp/>the<sp/>terminal<sp/>and<sp/>run<sp/>the<sp/>following<sp/>command.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">./rt2_assignment_1a.sh</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">After<sp/>doing<sp/>this<sp/>you<sp/>will<sp/>see<sp/>three<sp/>terminal<sp/>windows<sp/>start<sp/>appearing<sp/>on<sp/>the<sp/>screen,<sp/>including<sp/>a<sp/>Gazebo<sp/>simulation<sp/>with<sp/>a<sp/>mobile<sp/>robot<sp/>in<sp/>it.<sp/>Wait<sp/>for<sp/>the<sp/>system<sp/>load<sp/>all<sp/>the<sp/>files.<sp/>Find<sp/>the<sp/>terminal<sp/>window<sp/>with<sp/>title<sp/>**user_interface**<sp/>which<sp/>will<sp/>be<sp/>asking<sp/>to<sp/>press<sp/>1.<sp/>Upon<sp/>pressing<sp/>1,<sp/>the<sp/>mobile<sp/>robot<sp/>will<sp/>start<sp/>moving<sp/>towards<sp/>the<sp/>randomly<sp/>generated<sp/>goal<sp/>target.<sp/>And<sp/>if<sp/>during<sp/>the<sp/>execution<sp/>of<sp/>this<sp/>goal<sp/>if<sp/>you<sp/>press<sp/>0<sp/>the<sp/>robot<sp/>will<sp/>stop<sp/>immediately.<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Part<sp/>2:<sp/>Running<sp/>Mobile<sp/>Robot<sp/>Simulation<sp/>in<sp/>Gazeboo<sp/>using<sp/>ROS1/ROS2<sp/>Brigde</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">From<sp/>users<sp/>prespective<sp/>part<sp/>2<sp/>of<sp/>this<sp/>project<sp/>is<sp/>very<sp/>similar<sp/>to<sp/>part<sp/>1.<sp/>One<sp/>of<sp/>the<sp/>two<sp/>differences<sp/>are<sp/>mainly<sp/>architecture<sp/>based.<sp/>First<sp/>main<sp/>difference<sp/>is<sp/>that<sp/>half<sp/>of<sp/>this<sp/>part<sp/>is<sp/>build<sp/>in<sp/>ROS1<sp/>and<sp/>the<sp/>other<sp/>half<sp/>is<sp/>build<sp/>in<sp/>ROS2.<sp/>So<sp/>we<sp/>are<sp/>using<sp/>ROS1/ROS2<sp/>brigde<sp/>to<sp/>make<sp/>these<sp/>two<sp/>sub-parts<sp/>communicate<sp/>with<sp/>each<sp/>other.<sp/>The<sp/>second<sp/>difference<sp/>is<sp/>that<sp/>in<sp/>this<sp/>part<sp/>we<sp/>are<sp/>using<sp/>a<sp/>simple<sp/>server<sp/>to<sp/>provide<sp/>randomly<sp/>generated<sp/>goal<sp/>coordinates<sp/>to<sp/>&apos;go_to_point&apos;<sp/>node<sp/>instead<sp/>of<sp/>using<sp/>action<sp/>server<sp/>like<sp/>in<sp/>part<sp/>1.<sp/>Therefore<sp/>unlike<sp/>in<sp/>part<sp/>1<sp/>robot<sp/>will<sp/>not<sp/>immediately<sp/>stop<sp/>when<sp/>we<sp/>request<sp/>to<sp/>canncel<sp/>the<sp/>goal<sp/>but<sp/>after<sp/>finishing<sp/>the<sp/>current<sp/>goal.<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">In<sp/>ROS2<sp/>sub-part<sp/>we<sp/>have<sp/>developed<sp/>&apos;state_machine&apos;<sp/>and<sp/>&apos;position_service&apos;<sp/>node<sp/>as<sp/>components,<sp/>and<sp/>by<sp/>using<sp/>the<sp/>bridge,<sp/>they<sp/>are<sp/>interface<sp/>with<sp/>the<sp/>ROS1<sp/>nodes<sp/>which<sp/>is<sp/>&apos;user_interface.py&apos;<sp/>and<sp/>&apos;go_to_point.py&apos;<sp/>and<sp/>also<sp/>with<sp/>the<sp/>simulation<sp/>in<sp/>Gazebo.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">In<sp/>order<sp/>to<sp/>run<sp/>this<sp/>part<sp/>please<sp/>make<sp/>sure<sp/>you<sp/>are<sp/>in<sp/>/root<sp/>folder<sp/>where<sp/>you<sp/>have<sp/>already<sp/>downloaded<sp/>**rt2_assignment_1b.sh**<sp/>bash<sp/>file.<sp/>Open<sp/>the<sp/>terminal<sp/>and<sp/>run<sp/>the<sp/>following<sp/>command.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">./rt2_assignment_1a.sh</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">After<sp/>doing<sp/>this<sp/>you<sp/>will<sp/>see<sp/>four<sp/>terminal<sp/>windows<sp/>start<sp/>appearing<sp/>on<sp/>the<sp/>screen,<sp/>including<sp/>a<sp/>Gazeebo<sp/>simulation<sp/>with<sp/>a<sp/>mobile<sp/>robot<sp/>in<sp/>it.<sp/>Wait<sp/>for<sp/>the<sp/>system<sp/>load<sp/>all<sp/>the<sp/>files.<sp/>Find<sp/>the<sp/>terminal<sp/>window<sp/>with<sp/>title<sp/>**user_interface**<sp/>which<sp/>will<sp/>be<sp/>asking<sp/>to<sp/>press<sp/>1.<sp/>Upon<sp/>pressing<sp/>1,<sp/>the<sp/>mobile<sp/>robot<sp/>will<sp/>start<sp/>moving<sp/>towards<sp/>the<sp/>randomly<sp/>generated<sp/>goal<sp/>target.<sp/>And<sp/>if<sp/>during<sp/>the<sp/>execution<sp/>of<sp/>this<sp/>goal<sp/>if<sp/>you<sp/>press<sp/>0<sp/>the<sp/>robot<sp/>will<sp/>not<sp/>stop<sp/>immediately<sp/>since<sp/>we<sp/>are<sp/>not<sp/>using<sp/>action<sp/>server<sp/>in<sp/>this<sp/>part.<sp/>The<sp/>robot<sp/>will<sp/>complete<sp/>the<sp/>last<sp/>assigned<sp/>target<sp/>first<sp/>before<sp/>stopping.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Part<sp/>3:<sp/>Running<sp/>Mobile<sp/>Robot<sp/>Simulation<sp/>in<sp/>Vrep/CoppeliaSim<sp/>simulation</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Part<sp/>3<sp/>of<sp/>the<sp/>project<sp/>is<sp/>also<sp/>very<sp/>similar<sp/>with<sp/>the<sp/>part<sp/>1.<sp/>The<sp/>only<sp/>difference<sp/>is<sp/>that<sp/>we<sp/>are<sp/>using<sp/>VRep/CoppeliaSim<sp/>simulation<sp/>environement<sp/>instead<sp/>of<sp/>Gazebo.<sp/>To<sp/>create<sp/>a<sp/>communication<sp/>channel<sp/>between<sp/>the<sp/>vrep<sp/>scene<sp/>and<sp/>&apos;go_to_point_vrep.py&apos;<sp/>node<sp/>a<sp/>subscriber<sp/>and<sp/>a<sp/>publisher<sp/>has<sp/>been<sp/>develop.<sp/>The<sp/>publisher<sp/>publishes<sp/>the<sp/>robot<sp/>current<sp/>odometry<sp/>data<sp/>in<sp/>&apos;/odom&apos;<sp/>topic<sp/>which<sp/>&apos;go_to_point_vrep.py&apos;<sp/>node<sp/>subscribes<sp/>and<sp/>use<sp/>it<sp/>as<sp/>a<sp/>feedback<sp/>to<sp/>check<sp/>how<sp/>far<sp/>the<sp/>robot<sp/>is<sp/>from<sp/>the<sp/>goal<sp/>and<sp/>based<sp/>on<sp/>that<sp/>compute<sp/>new<sp/>velocity<sp/>commands<sp/>and<sp/>publishes<sp/>it<sp/>in<sp/>the<sp/>&apos;\cmd_vel&apos;<sp/>topic.</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">To<sp/>run<sp/>this<sp/>part<sp/>please<sp/>following<sp/>steps.<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">1.<sp/>Now<sp/>make<sp/>sure<sp/>you<sp/>are<sp/>in<sp/>/root<sp/>folder<sp/>where<sp/>**&apos;ros.sh&apos;**<sp/>is<sp/>downloaded.<sp/>open<sp/>the<sp/>terminal<sp/>and<sp/>run<sp/>the<sp/>following<sp/>commands.</highlight></codeline>
+<codeline><highlight class="normal"><sp/></highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">source<sp/>ros.sh</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">2.<sp/>Now<sp/>go<sp/>to<sp/>the<sp/>ROS1<sp/>workspace<sp/>and<sp/>run<sp/>the<sp/>master<sp/>by<sp/>using<sp/>following<sp/>command:</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">roscore<sp/>&amp;</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">3.<sp/>Then<sp/>go<sp/>to<sp/>the<sp/>Vrep/CoppeliaSim<sp/>installation<sp/>folder<sp/>and<sp/>to<sp/>launch<sp/>Vrep/CoppeliaSim<sp/>run<sp/>the<sp/>following<sp/>command.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/>```</highlight></codeline>
+<codeline><highlight class="normal"><sp/>./coppeliasim.sh<sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/>```</highlight></codeline>
+<codeline><highlight class="normal">3.<sp/>Wait<sp/>for<sp/>vrep<sp/>simulation<sp/>to<sp/>get<sp/>started.<sp/>Then<sp/>load<sp/>the<sp/>**&apos;pioneerROS.ttt&apos;**<sp/>scene<sp/>in<sp/>the<sp/>environment<sp/>by<sp/>clicking<sp/>the<sp/>**file/open<sp/>scene..**<sp/>button<sp/>in<sp/>the<sp/>main<sp/>menu.<sp/></highlight></codeline>
+<codeline><highlight class="normal">4.<sp/>Once<sp/>the<sp/>scene<sp/>is<sp/>loaded<sp/>start<sp/>the<sp/>simulation<sp/>by<sp/>clicking<sp/>on<sp/>the<sp/>play<sp/>button<sp/>in<sp/>the<sp/>top<sp/>center.<sp/>Unlike<sp/>Gazebo<sp/>the<sp/>simulation<sp/>does<sp/>not<sp/>automatically<sp/>start<sp/>in<sp/>the<sp/>vrep<sp/>simulator.<sp/></highlight></codeline>
+<codeline><highlight class="normal">5.<sp/>To<sp/>run<sp/>the<sp/>program<sp/>open<sp/>another<sp/>terminal<sp/>window,<sp/>go<sp/>to<sp/>the<sp/>root<sp/>folder<sp/>again<sp/>and<sp/>run<sp/>the<sp/>following<sp/>commands.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">source<sp/>ros.sh</highlight></codeline>
+<codeline><highlight class="normal">roslaunch<sp/>rt2_assignment1<sp/>sim_vrep.launch</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">6.<sp/>Once<sp/>program<sp/>is<sp/>loaded<sp/>it<sp/>will<sp/>be<sp/>asking<sp/>user<sp/>to<sp/>press<sp/>1.<sp/>Upon<sp/>pressing<sp/>1,<sp/>the<sp/>mobile<sp/>robot<sp/>will<sp/>start<sp/>moving<sp/>towards<sp/>the<sp/>randomly<sp/>generated<sp/>goal<sp/>target.<sp/>And<sp/>if<sp/>during<sp/>the<sp/>execution<sp/>of<sp/>this<sp/>goal<sp/>if<sp/>you<sp/>press<sp/>0<sp/>the<sp/>robot<sp/>will<sp/>not<sp/>stop<sp/>immediately.<sp/>It<sp/>will<sp/>complete<sp/>the<sp/>last<sp/>assigned<sp/>target<sp/>first<sp/>and<sp/>then<sp/>stop.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/></highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+    </programlisting>
+    <location file="README.md"/>
+  </compounddef>
+</doxygen>

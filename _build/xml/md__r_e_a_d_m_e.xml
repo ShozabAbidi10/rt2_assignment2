@@ -1,0 +1,119 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="md__r_e_a_d_m_e" kind="page">
+    <compoundname>md_README</compoundname>
+    <title>Assignment 1 of the Research Track 2 course (MSc Robotics Engineering, Unige)</title>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>The following repository contains the packages and the simulation environment for controlling a mobile robot in the Gazebo and Vrep simulator.</para>
+<sect1 id="md__r_e_a_d_m_e_1autotoc_md1">
+<title>Project Installation:</title>
+<para>This project requires both ROS1 and ROS2 to be install in the system. Please make sure you have both of them installed before following the instructions. There are three branches in this respository and each one of them should be install in the following fashion.</para>
+<para><orderedlist>
+<listitem><para>Code available in <bold>Main</bold> branch is a ROS1 package should be install in ROS1 workspace {ros1_ws}/src and to deploy successfully run the following command. <programlisting><codeline><highlight class="normal">catkin_make</highlight></codeline>
+<codeline><highlight class="normal">cd<sp/>devel/</highlight></codeline>
+<codeline><highlight class="normal">source<sp/>setup.bash</highlight></codeline>
+</programlisting></para>
+</listitem><listitem><para>Code available in <bold>ros2</bold> branch is a ROS2 package should be install in ROS2 workspace {ros2_ws}/src and to deploy successfully run the following command. <programlisting><codeline><highlight class="normal">colcon<sp/>build<sp/>--packages-select<sp/>rt2assignment_package</highlight></codeline>
+<codeline><highlight class="normal">cd<sp/>install/</highlight></codeline>
+<codeline><highlight class="normal">source<sp/>local_setup.bash</highlight></codeline>
+</programlisting></para>
+</listitem><listitem><para>Code available in <bold>sourcefiles</bold> branch is a set of source files that will be required to run the project. Please install them in your /root directory. Once the branch is cloned make all these files executable by running the following command for each of the bash files. <programlisting><codeline><highlight class="normal">chmod<sp/>+x<sp/>&lt;file_name&gt;</highlight></codeline>
+</programlisting></para>
+</listitem></orderedlist>
+<orderedlist>
+<listitem><para>This project requires both Gazebo and Vrep simulation environments, if they are not already installed in your system please install them by following given instructions:</para>
+<para><bold>For Gazebo :</bold><itemizedlist>
+<listitem><para>Please follow the instructions available on the respository.http://gazebosim.org/tutorials?tut=install_ubuntu</para>
+</listitem></itemizedlist>
+</para>
+<para><bold>For Vrep/Coppeliasim :</bold><itemizedlist>
+<listitem><para>Download the PRO-EDU version from: <ulink url="http://www.coppeliarobotics.com/downloads.html">http://www.coppeliarobotics.com/downloads.html</ulink></para>
+</listitem><listitem><para>Vrep should be already integrated with ROS. You just need to launch the ROS master before running the V-REP (CoppeliaSim) software.</para>
+</listitem><listitem><para>If there is any problem in building the plugin, you will need to recompile it by yourself: you can download it from here: CoppeliaRobotics/simExtROS (github.com).</para>
+</listitem><listitem><para>Please first install xsltproc [(sudo) apt-get install xsltproc] and xmlschema [pip3 install xmlschema]</para>
+</listitem><listitem><para>If specific messages/services/etc need to be supported, we have to make sure to edit files located in simExtROS/meta/, prior to recompilation. So please check if the following to message type is already included or not in the simExtROS/meta/message.txt &apos;geometry_msgs/Twist&apos; &apos;nav_msgs/Odometry&apos;</para>
+</listitem><listitem><para>In order to build the packages, navigate to the catkin_ws folder and type: ``` export COPPELIASIM_ROOT_DIR=~/path/to/coppeliaSim/folder ```</para>
+<para>``` catkin_make <ndash/>cmake-args -DCMAKE_BUILD_TYPE=Release ``` The packages should be generated and compiled to a library now. Copy the <bold>devel/lib/libsimExtROS.so</bold> file in the CoppeliaSim installation folder. The plugin is now ready to be use.</para>
+</listitem><listitem><para>Now to launch Vep/CoppeliaSim you can run the following command. Make sure you are in the Vep/CoppeliaSim installation folder.</para>
+<para>``` ./coppeliasim.sh ```</para>
+</listitem></itemizedlist>
+</para>
+</listitem></orderedlist>
+</para>
+<para>Once this is done. Next dependency that need to install is ROS1/ROS2 bridge package. Please install the package available on this repository: <ulink url="https://github.com/ros2/ros1_bridge">https://github.com/ros2/ros1_bridge</ulink><orderedlist>
+<listitem><para>Once setup 5 is done we need to modify our .bashrc file, to have the possibility of using both ROS1 and ROS2 frameworks at the same time (in different terminal). For that please comment all bash files lines.</para>
+</listitem></orderedlist>
+</para>
+<para><programlisting><codeline><highlight class="normal">#source<sp/>/opt/ros/noetic/setup.bash</highlight></codeline>
+<codeline><highlight class="normal">#source<sp/>/root/my_ros/devel/setup.bash</highlight></codeline>
+<codeline><highlight class="normal">#source<sp/>/opt/ros/foxy/setup.bash</highlight></codeline>
+<codeline><highlight class="normal">#source<sp/>/root/my_ros2/install/local_setup.bash</highlight></codeline>
+</programlisting></para>
+<para><orderedlist>
+<listitem><para>If you are successfully able to complete all the previous steps then all the dependencies are completed in order to run the project.</para>
+</listitem></orderedlist>
+</para>
+<para>The project in total have three parts, which can individually executed by following given instructions.</para>
+</sect1>
+<sect1 id="md__r_e_a_d_m_e_1autotoc_md2">
+<title>Part 1: Running Mobile Robot Simulation in Gazeboo using action server.</title>
+<para>Part1 of the project is consist of four main nodes.</para>
+<para><orderedlist>
+<listitem><para>position_service</para>
+</listitem><listitem><para>state_machine_action</para>
+</listitem><listitem><para>go_to_point_action.py</para>
+</listitem><listitem><para>user_interface_action.py</para>
+</listitem></orderedlist>
+</para>
+<para>&apos;<ref refid="namespaceuser__interface__action" kindref="compound">user_interface_action</ref>&apos; node communicates with the user and as per the provided commands, instruct the system to behave accordingly. If the user press 1 in the terminal, it request &apos;/user interface&apos; service which is host by &apos;state_machine_action.py&apos; node. Letting the node know that user have request for mobile robot to move. Therefore, upon receiving the service request from &apos;user interface&apos; node it request another service &apos;/position server&apos; which is hosted by &apos;position service&apos; node to randomly generate goal coordinates for the robot to follow. Once it receives the goal coordinates in response to the earlier request to &apos;/position service&apos; service, it pass these goal coordinates to an action service &quot;/go_to_point&quot; which is host by &apos;go_to_point_action.py&apos; node. Once ‘go_to_point_action.py’ node receives the goal coordinate it start computing required linear and angular velocity values for robot to reach that point and meanwhile start publishing it on ‘cmd_vel’ topic which subscribed by Gazeebo. Since ‘/go_to_point’ is an action service therefore the user has the option to request cancelling the goal at any point during the execution. And for this purpose the ‘user interface’ node ask the user to press 0 in order to cancel the goal.</para>
+<para>In order to run this part please make sure you are in /root folder where you have already downloaded <bold>rt2_assignment_1a.sh</bold> bash file. Open the terminal and run the following command.</para>
+<para><programlisting><codeline><highlight class="normal">./rt2_assignment_1a.sh</highlight></codeline>
+</programlisting></para>
+<para>After doing this you will see three terminal windows start appearing on the screen, including a Gazebo simulation with a mobile robot in it. Wait for the system load all the files. Find the terminal window with title <bold>user_interface</bold> which will be asking to press 1. Upon pressing 1, the mobile robot will start moving towards the randomly generated goal target. And if during the execution of this goal if you press 0 the robot will stop immediately.</para>
+</sect1>
+<sect1 id="md__r_e_a_d_m_e_1autotoc_md3">
+<title>Part 2: Running Mobile Robot Simulation in Gazeboo using ROS1/ROS2 Brigde</title>
+<para>From users prespective part 2 of this project is very similar to part 1. One of the two differences are mainly architecture based. First main difference is that half of this part is build in ROS1 and the other half is build in ROS2. So we are using ROS1/ROS2 brigde to make these two sub-parts communicate with each other. The second difference is that in this part we are using a simple server to provide randomly generated goal coordinates to &apos;go_to_point&apos; node instead of using action server like in part 1. Therefore unlike in part 1 robot will not immediately stop when we request to canncel the goal but after finishing the current goal.</para>
+<para>In ROS2 sub-part we have developed &apos;state_machine&apos; and &apos;position_service&apos; node as components, and by using the bridge, they are interface with the ROS1 nodes which is &apos;user_interface.py&apos; and &apos;go_to_point.py&apos; and also with the simulation in Gazebo.</para>
+<para>In order to run this part please make sure you are in /root folder where you have already downloaded <bold>rt2_assignment_1b.sh</bold> bash file. Open the terminal and run the following command.</para>
+<para><programlisting><codeline><highlight class="normal">./rt2_assignment_1a.sh</highlight></codeline>
+</programlisting></para>
+<para>After doing this you will see four terminal windows start appearing on the screen, including a Gazeebo simulation with a mobile robot in it. Wait for the system load all the files. Find the terminal window with title <bold>user_interface</bold> which will be asking to press 1. Upon pressing 1, the mobile robot will start moving towards the randomly generated goal target. And if during the execution of this goal if you press 0 the robot will not stop immediately since we are not using action server in this part. The robot will complete the last assigned target first before stopping.</para>
+</sect1>
+<sect1 id="md__r_e_a_d_m_e_1autotoc_md4">
+<title>Part 3: Running Mobile Robot Simulation in Vrep/CoppeliaSim simulation</title>
+<para>Part 3 of the project is also very similar with the part 1. The only difference is that we are using VRep/CoppeliaSim simulation environement instead of Gazebo. To create a communication channel between the vrep scene and &apos;go_to_point_vrep.py&apos; node a subscriber and a publisher has been develop. The publisher publishes the robot current odometry data in &apos;/odom&apos; topic which &apos;go_to_point_vrep.py&apos; node subscribes and use it as a feedback to check how far the robot is from the goal and based on that compute new velocity commands and publishes it in the &apos;\cmd_vel&apos; topic.</para>
+<para>To run this part please following steps.</para>
+<para><orderedlist>
+<listitem><para>Now make sure you are in /root folder where **&apos;ros.sh&apos;** is downloaded. open the terminal and run the following commands.</para>
+</listitem></orderedlist>
+</para>
+<para><programlisting><codeline><highlight class="normal">source<sp/>ros.sh</highlight></codeline>
+</programlisting></para>
+<para><orderedlist>
+<listitem><para>Now go to the ROS1 workspace and run the master by using following command: <programlisting><codeline><highlight class="normal">roscore<sp/>&amp;</highlight></codeline>
+</programlisting></para>
+</listitem><listitem><para>Then go to the Vrep/CoppeliaSim installation folder and to launch Vrep/CoppeliaSim run the following command.</para>
+</listitem></orderedlist>
+</para>
+<para><programlisting><codeline><highlight class="normal">./coppeliasim.sh<sp/></highlight></codeline>
+</programlisting></para>
+<para><orderedlist>
+<listitem><para>Wait for vrep simulation to get started. Then load the **&apos;pioneerROS.ttt&apos;** scene in the environment by clicking the <bold>file/open scene..</bold> button in the main menu.</para>
+</listitem><listitem><para>Once the scene is loaded start the simulation by clicking on the play button in the top center. Unlike Gazebo the simulation does not automatically start in the vrep simulator.</para>
+</listitem><listitem><para>To run the program open another terminal window, go to the root folder again and run the following commands.</para>
+</listitem></orderedlist>
+</para>
+<para><programlisting><codeline><highlight class="normal">source<sp/>ros.sh</highlight></codeline>
+<codeline><highlight class="normal">roslaunch<sp/>rt2_assignment1<sp/>sim_vrep.launch</highlight></codeline>
+</programlisting></para>
+<para><orderedlist>
+<listitem><para>Once program is loaded it will be asking user to press 1. Upon pressing 1, the mobile robot will start moving towards the randomly generated goal target. And if during the execution of this goal if you press 0 the robot will not stop immediately. It will complete the last assigned target first and then stop. </para>
+</listitem></orderedlist>
+</para>
+</sect1>
+    </detaileddescription>
+  </compounddef>
+</doxygen>
