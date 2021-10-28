@@ -4,7 +4,7 @@ The following repository contains the packages and the simulation environment fo
 
 ## Project Installation:
 
-This project requires both ROS1 and ROS2 to be install in the system. Please make sure you have both of them installed before following the instructions. There are three branches in this respository and each one of them should be install in the following fashion.
+This project requires both ROS1 to be install in the system. Please make sure you have it installed before following the instructions. There are three branches in this respository, the first branch "main" and the second branch "sphinx" are exactly the same project but with different style of documentation. The documentation in the "main" branch is done using Doxygen and in the second "sphinx" branch the documentation in done using sphinx tool.
 
 1. Code available in **Main** branch is a ROS1 package should be install in ROS1 workspace {ros1_ws}/src and to deploy successfully run the following command.
 ```
