@@ -1,6 +1,6 @@
 # Assignment 2 of the Research Track 2 course (MSc Robotics Engineering, Unige)
 
-The following repository contains the packages and the simulation environment for controlling a mobile robot in the Gazebo simulator with improved user interface developed in Jupyter Notebook.
+The following repository contains the packages and the simulation environment for controlling a mobile robot in the Gazebo simulator with improved user interface developed in Jupyter Notebook. This assignment is an extension of its previous iteration assignment 1 which can be access from here: https://github.com/ShozabAbidi10/rt2assignment_package.
 
 ## Project Installation:
 
