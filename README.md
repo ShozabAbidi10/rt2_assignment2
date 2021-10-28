@@ -69,4 +69,4 @@ After doing this you will see two terminal windows start appearing on the screen
  
  ** Sphinx :** 
  
- * The documentation for Doxygen can be access from this directory '{ros_ws}/src/rt2_assignment2/-build/html/index.html'
+ * The documentation for Sphinx can be access from this directory '{ros_ws}/src/rt2_assignment2/-build/..'
