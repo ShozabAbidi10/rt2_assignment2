@@ -20,7 +20,6 @@
 *
 */
 
-
 #include "ros/ros.h"
 #include "rt2_assignment1/Command.h"
 #include "rt2_assignment1/Position.h"
@@ -88,7 +87,7 @@ int main(int argc, char **argv)
   
     
    ROS_INFO("Waiting for action server to start.");
-                                                        // wait for the action server to start
+                                              // wait for the action server to start
    ac.waitForServer();                        //will wait for infinite time
 
    ROS_INFO("Action server started, sending goal."); 
@@ -110,13 +109,13 @@ int main(int argc, char **argv)
 	   	{
 	   	    if(count_ == 1)
 		    {
-		            client_rp.call(rp);
-	   				goal.x = rp.response.x;
-	   				goal.y = rp.response.y;
-	   				goal.theta = rp.response.theta;  //this goal is keeps on changing because while is active.
-		            ac.sendGoal(goal);
-		            count_++;
-		            std::cout << "\nGoing to the position: x= " << goal.x << " y= " <<goal.y << " theta = " <<goal.theta << std::endl;
+		    	client_rp.call(rp);
+	   		goal.x = rp.response.x;
+	   		goal.y = rp.response.y;
+	   	        goal.theta = rp.response.theta;  //this goal is keeps on changing because while is active.
+		        ac.sendGoal(goal);
+		        count_++;
+		        std::cout << "\nGoing to the position: x= " << goal.x << " y= " <<goal.y << " theta = " <<goal.theta << std::endl;
 		    } 
 	   	    
 	   	    Check_ = state.toString().c_str();
@@ -126,10 +125,10 @@ int main(int argc, char **argv)
 	   	        std::cout << "\nPosition Reached! " << std::endl;  
 	   	        client_rp.call(rp);
 	   	        goal.x = rp.response.x;
-		            goal.y = rp.response.y;
-		            goal.theta = rp.response.theta;  //this goal is keeps on changing because while is active.       
-		            ac.sendGoal(goal);
-		            std::cout << "\nGoing to the position: x= " << goal.x << " y= " <<goal.y << " theta = " <<goal.theta << std::endl;
+		        goal.y = rp.response.y;
+		        goal.theta = rp.response.theta;  //this goal is keeps on changing because while is active.       
+		        ac.sendGoal(goal);
+		        std::cout << "\nGoing to the position: x= " << goal.x << " y= " <<goal.y << " theta = " <<goal.theta << std::endl;
 		    }   
 		    
 		}
